@@ -1,5 +1,16 @@
 # notes-app
 Note App in Nodejs + express  + express-validator + passport + method-override
+```
+cd nodes-app
+```
+```
+npm install
+```
+```
+npm run dev
+```
+
+
 
 - Login
 ![Alt text](/screenshot/login.png?raw=true "login-note-apps")
