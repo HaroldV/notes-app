@@ -1,0 +1,16 @@
+{{#if error}}
+    <div class="column">
+        <div class="notification is-danger">
+            <button class="delete" aria-label="close"></button>
+                {{error}}
+        </div>
+    </div>
+{{/if}}
+{{#each error_msg}}
+    <div class="column">
+        <div class="notification is-danger">
+            <button class="delete" aria-label="close"></button>
+            {{this.param}} - {{this.msg}}
+        </div>
+    </div>
+{{/each}}

@@ -1,0 +1,38 @@
+{{#each notes}}
+  <div class="column is-half is-offset-one-quarter">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Title: {{this.title}} 
+        </p>
+        <a href="/notes/edit/{{this._id}}" class="card-header-icon" aria-label="more options">
+          <span class="icon">
+            <i class="fas fa-edit"></i>
+          </span>
+        </a>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          {{this.description}}
+        </div>
+      </div>
+      <div class="column">
+        <form action="/notes/delete/{{this._id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="button is-danger is-fullwidth">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{else}}
+    <div class="column is-half is-centered">
+      <div class="card">
+        <div class="card-content">
+          <div class="content">
+            <h1>Welcome {{user.name}}</h1>
+            There are not notes yet.
+        </div>
+        <a href="/notes/add" class="button is-primary"> Add Notes</a>
+      </div>
+    </div>
+{{/each}}
